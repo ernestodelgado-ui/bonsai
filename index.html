@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Acá defino la codificación para que tome bien tildes y eñes -->
+    <meta charset="UTF-8">
+
+    <!-- Esto hace que la página se adapte bien en celular -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título que aparece en la pestaña -->
+    <title>BONSAI</title>
+
+    <!-- Vinculo la hoja de estilos -->
+    <link rel="stylesheet" href="estilo/style.css">
+
+    <!-- Agrego el favicon -->
+    <link rel="icon" href="img/favicon.png" type="image/png">
+</head>
+
+<body>
+
+<!-- =======================================================
+     HEADER
+     En mobile dejo la marca y el botón hamburguesa.
+     El nav normal sigue cargado pero oculto desde CSS.
+======================================================== -->
+<header>
+    <h1>BONSAI</h1>
+
+    <!-- Este botón abre la ventana del menú -->
+    <a href="#menu-mobile" class="abrir-menu">
+        <img src="img/menu.png" alt="Abrir menú">
+    </a>
+
+    <!-- Este nav queda oculto en mobile y después sirve para tablet y desktop -->
+    <nav>
+        <ul>
+            <li><a href="#promo">Inicio</a></li>
+            <li><a href="#beneficios">Beneficios</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#historia">Nosotros</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- =======================================================
+     MENÚ MOBILE
+     Esta ventana se abre cuando toco el hamburguesa.
+     Está pensada solo para mobile.
+======================================================== -->
+<div id="menu-mobile" class="menu-mobile">
+    <div class="contenido-menu">
+        <a href="#" class="cerrar-menu">×</a>
+
+        <ul>
+            <li><a href="#promo">Inicio</a></li>
+            <li><a href="#beneficios">Beneficios</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#historia">Nosotros</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </div>
+</div>
+
+
+    <!-- =======================================================
+         SECCIÓN PROMO / BANNER
+         Esta es la primera parte fuerte de la one page.
+         Tiene título, texto, botones y pastillas informativas.
+    ======================================================== -->
+    <section id="promo">
+         <h2>Creá un futuro más verde</h2>
+
+        <p>
+            Aportá frescura y bienestar a tu hogar con nuestras plantas seleccionadas de fácil cuidado.
+        </p>
+
+        <!-- Agrupo los dos botones del banner -->
+        <div class="botones">
+            <a href="#popup1">Descubrir plantas</a>
+            <a href="#historia">Conocer más</a>
+        </div>
+
+        <!-- Pastillas informativas -->
+        <ul>
+            <li>Ideal</li>
+            <li>55 a 70% humedad</li>
+            <li>Fácil de cuidar</li>
+        </ul>
+    </section>
+
+
+    <!-- =======================================================
+         BENEFICIOS
+         Esta sección funciona como cards con imagen,
+         título, texto y botón.
+    ======================================================== -->
+    <section id="beneficios">
+        <h2>Las más populares de BONSAI</h2>
+
+        <ul>
+            <li>
+                <img src="img/beneficio1.png" alt="Plantas para interiores">
+                <h3>Plantas para interiores</h3>
+                <p>Opciones ideales para sumar frescura, equilibrio y vida a cualquier ambiente.</p>
+                <a href="#popup2">Conocer más</a>
+            </li>
+
+            <li>
+                <img src="img/beneficio2.png" alt="Macetas sustentables">
+                <h3>Macetas sustentables</h3>
+                <p>Diseños simples y funcionales que acompañan la estética natural de cada espacio.</p>
+                <a href="#popup3">Conocer más</a>
+            </li>
+
+            <li>
+                <img src="img/beneficio3.png" alt="Asesoramiento experto">
+                <h3>Asesoramiento experto</h3>
+                <p>Consejos prácticos para ayudarte a elegir, ubicar y cuidar mejor tus plantas.</p>
+                <a href="#popup4">Conocer más</a>
+            </li>
+        </ul>
+    </section>
+
+
+
+
+    <!-- =======================================================
+     CONDICIONES
+     Esta sección muestra datos rápidos sobre el tipo de
+     cuidado o ambiente ideal para las plantas.
+    ======================================================== -->
+    <section id="condiciones">
+        <h2>Condiciones ideales</h2>
+
+        <ul>
+            <li>
+                <img src="img/exterior.png" alt="Plantas de exterior">
+            </li>
+
+            <li>
+                <img src="img/interior.png" alt="Plantas de interior">
+            </li>
+
+            <li>
+                <img src="img/temperatura.png" alt="Temperatura ideal">
+            </li>
+
+            <li>
+                <img src="img/humedad.png" alt="Nivel de humedad">
+            </li>
+        </ul>
+    </section>
+
+
+
+    <!-- =======================================================
+         PRODUCTOS
+         Acá muestro algunos productos destacados.
+         La estructura es similar a la de beneficios.
+    ======================================================== -->
+    <section id="productos">
+        <h2>Productos destacados</h2>
+
+        <ul>
+            <li>
+                <img src="img/planta1.jpg" alt="Planta de interior Cinta Libre">
+                <h3>Cinta Libre</h3>
+                <p>Ideal para escritorios y espacios pequeños.</p>
+                <a href="#">Conocer más</a>
+            </li>
+
+            <li>
+                <img src="img/planta2.jpg" alt="Planta Bonsái Natura">
+                <h3>Bonsái Natura</h3>
+                <p>Una opción fresca para interiores luminosos.</p>
+                <a href="#">Conocer más</a>
+            </li>
+
+            <li>
+                <img src="img/planta3.jpg" alt="Planta Bonsái Vida">
+                <h3>Bonsái Vida</h3>
+                <p>Aporta verde y bienestar a cualquier ambiente.</p>
+                <a href="#">Conocer más</a>
+            </li>
+        </ul>
+    </section>
+
+
+    <!-- =======================================================
+     CARRUSEL
+     Esta sección funciona como un carrusel horizontal
+     en mobile. Después la adaptamos en tablet y desktop.
+    ======================================================== -->
+    <section id="carrusel">
+        <h2>Espacios BONSAI</h2>
+
+        <ul>
+            <li>
+                <img src="img/carrusel1.jpg" alt="Living con plantas de interior">
+                <h3>Living natural</h3>
+                <p>Una composición pensada para sumar frescura y armonía al espacio principal del hogar.</p>
+            </li>
+
+            <li>
+                <img src="img/carrusel2.jpg" alt="Escritorio con plantas pequeñas">
+                <h3>Rincón de trabajo</h3>
+                <p>Plantas pequeñas y funcionales para acompañar escritorios, estudios y mesas de apoyo.</p>
+            </li>
+
+            <li>
+                <img src="img/carrusel3.jpg" alt="Dormitorio con plantas decorativas">
+                <h3>Dormitorio verde</h3>
+                <p>Una propuesta suave para generar calma, bienestar visual y una atmósfera más relajada.</p>
+            </li>
+
+            <li>
+                <img src="img/carrusel4.jpg" alt="Espacio interior con varias macetas">
+                <h3>Composición botánica</h3>
+                <p>Una forma de combinar macetas, alturas y follajes para crear un rincón con identidad propia.</p>
+            </li>
+        </ul>
+    </section>
+
+
+    <!-- =======================================================
+         HISTORIA
+         Esta sección cuenta la identidad de la marca.
+         Tiene imagen, título, texto largo y botón.
+    ======================================================== -->
+    <section id="historia">
+        <img src="img/historia.jpg" alt="Espacio interior con plantas">
+
+        <h2>Nuestra historia</h2>
+
+        <p>
+            BONSAI nace de la idea de acercar la naturaleza a la vida cotidiana de una forma simple, armónica y accesible. Creemos que una planta no es solo un objeto decorativo, sino una presencia viva que transforma los espacios, mejora el ánimo y genera una conexión más auténtica con el entorno. Por eso seleccionamos especies pensadas para adaptarse a interiores, acompañadas por macetas y propuestas visuales que combinan diseño, calma y bienestar. Nuestro objetivo es que cada persona pueda crear un rincón verde propio, sin necesidad de ser experta, incorporando frescura, equilibrio y belleza natural a su casa, estudio o lugar de trabajo. En BONSAI entendemos el cuidado de las plantas como una experiencia cotidiana que invita a bajar el ritmo, observar más y habitar mejor cada espacio.
+        </p>
+
+        <a href="#">Leer más</a>
+    </section>
+
+
+<!-- =======================================================
+     FOOTER
+     Acá organizo el pie de página con marca, menú, redes,
+     cierre y una decoración final abajo de todo.
+======================================================== -->
+<footer id="contacto">
+    <h2>BONSAI</h2>
+
+    <p>Plantas, diseño y bienestar para tus espacios.</p>
+
+    <nav class="footer-menu">
+        <ul>
+            <li><a href="#beneficios">Beneficios</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#historia">Nosotros</a></li>
+            <li><a href="#condiciones">Cuidados</a></li>
+        </ul>
+    </nav>
+
+    <ul class="footer-redes">
+        <li>
+            <a href="#">
+                <img src="img/instagram.png" alt="Instagram">
+            </a>
+        </li>
+
+        <li>
+            <a href="#">
+                <img src="img/facebook.png" alt="Facebook">
+            </a>
+        </li>
+
+        <li>
+            <a href="#">
+                <img src="img/whatsapp.png" alt="WhatsApp">
+            </a>
+        </li>
+    </ul>
+
+    <p class="footer-copy">© 2026 BONSAI — Trabajo práctico Composición Digital</p>
+
+    <div class="footer-deco">
+        <img src="img/hojas4.png" alt="Decoración de hojas">
+    </div>
+</footer>
+
+    <!-- =======================================================
+         POPUPS
+         Los dejo al final del body.
+         Funcionan con :target desde CSS.
+    ======================================================== -->
+
+    <!-- Popup 1: se abre desde el botón “Descubrir plantas” del banner -->
+    <div id="popup1" class="popup">
+        <div class="contenido-popup">
+            <a href="#" class="cerrar">×</a>
+            <img src="img/popup1.jpg" alt="Descubrir plantas">
+            <h3>Descubrir plantas</h3>
+            <p>
+                En BONSAI seleccionamos plantas pensadas para transformar los espacios con frescura, equilibrio y belleza natural. Cada variedad fue elegida para adaptarse mejor a interiores y acompañar la vida cotidiana de forma simple.
+            </p>
+        </div>
+    </div>
+
+    <!-- Popup 2: se abre desde la primera card de beneficios -->
+    <div id="popup2" class="popup">
+        <div class="contenido-popup">
+            <a href="#" class="cerrar">×</a>
+            <img src="img/popup2.jpg" alt="Plantas para interiores">
+            <h3>Plantas para interiores</h3>
+            <p>
+                Nuestras plantas de interior están pensadas para aportar armonía y vida a livings, dormitorios, escritorios y rincones especiales. Son una forma simple de sumar naturaleza sin perder estética.
+            </p>
+        </div>
+    </div>
+
+    <!-- Popup 3: se abre desde la segunda card de beneficios -->
+    <div id="popup3" class="popup">
+        <div class="contenido-popup">
+            <a href="#" class="cerrar">×</a>
+            <img src="img/popup3.jpg" alt="Macetas sustentables">
+            <h3>Macetas sustentables</h3>
+            <p>
+                Trabajamos con macetas que combinan funcionalidad, diseño y materiales que acompañan la idea de un hogar más natural. Buscamos piezas que realcen cada planta y se integren al espacio.
+            </p>
+        </div>
+    </div>
+
+    <!-- Popup 4: se abre desde la tercera card de beneficios -->
+    <div id="popup4" class="popup">
+        <div class="contenido-popup">
+            <a href="#" class="cerrar">×</a>
+            <img src="img/popup4.jpg" alt="Asesoramiento experto">
+            <h3>Asesoramiento experto</h3>
+            <p>
+                En BONSAI te acompañamos para elegir mejor según la luz, el ambiente y el tipo de cuidado que querés dar. La idea es que sumar verde a tu casa sea una experiencia simple, clara y disfrutable.
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>

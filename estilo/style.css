@@ -1,0 +1,741 @@
+/* =======================================================
+   TIPOGRAFÍAS
+   Acá importo las 2 fuentes finales que vamos a usar:
+   - DM Serif Display = títulos
+   - Source Sans 3 = textos, botones, links y navegación
+======================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:wght@400;500;600;700&display=swap');
+
+
+/* =======================================================
+   RESET GENERAL
+   Acá saco márgenes y paddings que el navegador pone
+   por defecto y dejo todo más controlado.
+======================================================= */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =======================================================
+   ESTILOS GENERALES DEL SITIO
+   Acá defino fondo, color base y tipografía principal
+   para el cuerpo del sitio.
+======================================================= */
+
+body{
+    background-color: #f5f3ee;
+    color: #1f2a1f;
+    font-size: 1rem;
+    font-family: "Source Sans 3", sans-serif;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+section{
+    padding: 1.5rem;
+}
+
+a{
+    text-decoration: none;
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 600;
+}
+
+
+/* =======================================================
+   JERARQUÍAS TIPOGRÁFICAS
+   Acá organizo qué fuente usa cada nivel de texto.
+======================================================= */
+
+h1{
+    font-family: "DM Serif Display", serif;
+    font-size: 2rem;
+    line-height: 1.2;
+    margin: 0;
+}
+
+h2{
+    font-family: "DM Serif Display", serif;
+    font-size: 1.8rem;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+h3{
+    font-family: "DM Serif Display", serif;
+    font-size: 1.2rem;
+    line-height: 1.3;
+    margin-top: 0.7rem;
+    margin-bottom: 0.3rem;
+}
+
+p{
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 1rem;
+    line-height: 1.6rem;
+    margin-top: 0;
+}
+
+
+/* =======================================================
+   HEADER
+   En mobile dejo el logo a la izquierda y el ícono del
+   menú hamburguesa a la derecha.
+======================================================= */
+
+header{
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+header h1{
+    font-family: "DM Serif Display", serif;
+    font-size: 2rem;
+    margin: 0;
+}
+
+header a img{
+    width: 2.5rem;
+    height: auto;
+    display: block;
+}
+
+/* En mobile oculto el nav porque se reemplaza por el menú hamburguesa */
+header nav{
+    display: none;
+}
+
+
+/* =======================================================
+   MENÚ MOBILE
+   Lo hago con :target para que se abra como una ventana.
+======================================================= */
+
+.abrir-menu{
+    display: block;
+}
+
+.abrir-menu img{
+    width: 2.5rem;
+    height: auto;
+    display: block;
+}
+
+.menu-mobile{
+    background-color: rgba(0, 0, 0, 0.35);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 1.5rem;
+    display: none;
+    align-items: flex-start;
+    justify-content: center;
+    z-index: 1200;
+}
+
+.menu-mobile:target{
+    display: flex;
+}
+
+.contenido-menu{
+    background-color: #ffffff;
+    width: 100%;
+    border-radius: 1rem;
+    padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+    position: relative;
+}
+
+.cerrar-menu{
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 2rem;
+    color: #1f2a1f;
+    position: absolute;
+    top: 1rem;
+    right: 1.2rem;
+    line-height: 1;
+}
+
+.contenido-menu ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contenido-menu ul li a{
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1f2a1f;
+}
+
+/* =======================================================
+   SECCIÓN PROMO / BANNER
+   Acá uso una imagen de fondo con overlay oscuro para que
+   el texto se lea mejor sobre la foto.
+======================================================= */
+
+#promo{
+    background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url("../img/promo.jpg");
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
+    padding: 2rem 1.5rem 4rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    color: white;
+}
+
+#promo h2{
+    font-family: "DM Serif Display", serif;
+    font-size: 2.2rem;
+    line-height: 2.4rem;
+    margin-bottom: 0.3rem;
+    width: 75%;
+}
+
+#promo p{
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    width: 85%;
+    margin-top: 0;
+}
+
+/* Acá organizo los dos botones del banner */
+#promo .botones{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+    margin-top: 0.3rem;
+}
+
+#promo .botones a{
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 600;
+    text-align: center;
+    padding: 0.9rem 1.4rem;
+    border-radius: 0.7rem;
+    font-size: 1rem;
+    width: 14rem;
+}
+
+/* Botón principal */
+#promo .botones a:first-child{
+    background-color: #6c944f;
+    color: white;
+}
+
+/* Botón secundario */
+#promo .botones a:last-child{
+    border: 1px solid white;
+    color: white;
+    background-color: transparent;
+}
+
+/* Pastillas informativas del banner */
+#promo ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 0.3rem;
+    align-items: flex-start;
+}
+
+#promo ul li{
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 600;
+    background-color: rgba(255,255,255,0.18);
+    padding: 0.8rem 1rem;
+    border-radius: 1rem;
+    font-size: 0.95rem;
+    width: 11rem;
+}
+
+
+/* =======================================================
+   BENEFICIOS
+   Esta sección funciona como cards con imagen, título,
+   texto y botón adentro.
+======================================================= */
+
+#beneficios{
+    background-color: #f5f3ee;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-radius: 2rem 2rem 0 0;
+    margin-top: -2rem;
+    padding-top: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+#beneficios h2{
+    margin-bottom: 0.2rem;
+}
+
+#beneficios ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#beneficios ul li{
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+#beneficios ul li img{
+    width: 100%;
+    border-radius: 0.8rem;
+}
+
+#beneficios ul li h3{
+    font-family: "DM Serif Display", serif;
+    font-size: 1.3rem;
+    line-height: 1.3;
+    margin-top: 0.3rem;
+    margin-bottom: 0;
+}
+
+#beneficios ul li p{
+    font-family: "Source Sans 3", sans-serif;
+    margin-top: 0;
+    line-height: 1.5rem;
+}
+
+#beneficios ul li a{
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 600;
+    display: inline-block;
+    background-color: #5f8b4c;
+    color: white;
+    padding: 0.7rem 1rem;
+    border-radius: 0.5rem;
+    width: fit-content;
+    margin-top: 0.3rem;
+}
+
+
+/* =======================================================
+   CONDICIONES
+   Acá agrego una sección con 4 cards cuadradas que muestran
+   información rápida con íconos.
+======================================================= */
+
+#condiciones{
+    background-color: #b7c2b0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+}
+
+#condiciones h2{
+    text-align: center;
+    margin-bottom: 0.2rem;
+}
+
+#condiciones ul{
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+#condiciones ul li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.4rem;
+}
+
+#condiciones ul li img{
+    width: 72%;
+    height: auto;
+    display: block;
+    border-radius: 1.2rem;
+    box-shadow: 0 0.25rem 0.8rem rgba(0, 0, 0, 0.12);
+}
+
+#condiciones ul li:nth-child(2) img{
+    width: 66%;
+}
+
+/* =======================================================
+   PRODUCTOS
+   Acá también trabajo con cards para mostrar algunos
+   productos destacados.
+======================================================= */
+
+#productos{
+    background-color: #edf3e8;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#productos h2{
+    margin-bottom: 0.2rem;
+}
+
+#productos ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#productos ul li{
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#productos ul li h3{
+    font-family: "DM Serif Display", serif;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+}
+
+#productos ul li p{
+    font-family: "Source Sans 3", sans-serif;
+    margin-top: 0;
+}
+
+#productos ul li a{
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 600;
+    display: inline-block;
+    background-color: #5f8b4c;
+    color: white;
+    padding: 0.7rem 1rem;
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+    width: fit-content;
+}
+
+
+/* =======================================================
+   CARRUSEL
+   En mobile lo dejo como carrusel horizontal, pero con
+   cards más compactas, parecidas a las de arriba.
+======================================================= */
+
+#carrusel{
+    background-color: #c7d1bf;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+}
+
+#carrusel h2{
+    text-align: center;
+    margin-bottom: 0.2rem;
+}
+
+#carrusel ul{
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+}
+
+#carrusel ul li{
+    background-color: #1f3a22;
+    border-radius: 1rem;
+    min-width: 14.5rem;
+    max-width: 14.5rem;
+    flex-shrink: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+#carrusel ul li img{
+    width: 100%;
+    height: 10.5rem;
+    object-fit: cover;
+    display: block;
+}
+
+#carrusel ul li h3{
+    margin: 0;
+    padding: 1rem 1rem 0.3rem 1rem;
+    font-size: 1.3rem;
+    line-height: 1.2;
+    color: white;
+}
+
+#carrusel ul li p{
+    margin: 0;
+    padding: 0 1rem 1rem 1rem;
+    line-height: 1.4rem;
+    font-size: 0.95rem;
+    color: white;
+}
+
+/* =======================================================
+   HISTORIA
+   Acá dejo una estructura más simple: imagen, título,
+   texto y botón.
+======================================================= */
+
+#historia{
+    background-color: #f5f3ee;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+#historia h2{
+    margin-bottom: 0.2rem;
+}
+
+#historia p{
+    font-family: "Source Sans 3", sans-serif;
+    margin-top: 0;
+}
+
+#historia a{
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 600;
+    display: inline-block;
+    background-color: #5f8b4c;
+    color: white;
+    padding: 0.7rem 1rem;
+    border-radius: 0.5rem;
+    width: fit-content;
+    margin-top: 0.3rem;
+}
+
+
+/* =======================================================
+   FOOTER
+   Acá organizo el pie de página como una composición
+   vertical y dejo espacio abajo para la decoración PNG.
+======================================================= */
+
+footer{
+    background: linear-gradient(90deg, #18311d 0%, #1f3a22 50%, #18311d 100%);
+    color: white;
+    padding: 2.5rem 1.5rem 8rem 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    position: relative;
+}
+
+footer h2{
+    font-family: "DM Serif Display", serif;
+    font-size: 2.2rem;
+    margin: 0;
+}
+
+footer p{
+    font-family: "Source Sans 3", sans-serif;
+    margin: 0;
+}
+
+.footer-menu ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-menu ul li a{
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.footer-redes{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.8rem;
+    margin: 0.3rem 0 0 0;
+    padding: 0;
+}
+
+.footer-redes li a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-redes li a img{
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
+    display: block;
+}
+
+.footer-copy{
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 0.5rem;
+}
+
+/* Decoración final con PNG */
+.footer-deco{
+    position: absolute;
+    bottom: 0.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.footer-deco img{
+    width: 100%;
+    max-width: 24rem;
+    display: block;
+    opacity: 0.9;
+}
+
+/* =======================================================
+   POP UPS
+   Los pop ups están hechos con :target.
+   La capa negra oscurece el fondo y la card blanca muestra
+   la información.
+======================================================= */
+
+.popup{
+    background-color: rgba(0, 0, 0, 0.75);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 1rem;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup:target{
+    display: flex;
+}
+
+.contenido-popup{
+    background-color: #f8f7f2;
+    width: 90%;
+    max-width: 22rem;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 1.2rem;
+    padding: 1rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.contenido-popup img{
+    width: 100%;
+    height: auto;
+    border-radius: 0.9rem;
+    display: block;
+}
+
+.contenido-popup h3{
+    font-family: "DM Serif Display", serif;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.contenido-popup p{
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 1rem;
+    line-height: 1.6rem;
+    margin: 0;
+}
+
+/* Botón para cerrar el popup */
+.cerrar{
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 700;
+    background-color: #5f8b4c;
+    color: white;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0.8rem;
+    right: 0.8rem;
+    font-size: 1rem;
+    text-decoration: none;
+    z-index: 10;
+}
+
+/* Este hover después se va a notar más en desktop */
+.cerrar:hover{
+    background-color: #476938;
+}
+
+/* =======================================================
+   MEDIA QUERIES
+   Acá dejo preparados los cortes para seguir después.
+   La base que ya hicimos funciona como mobile first,
+   o sea que lo que está arriba ya corresponde a celular.
+======================================================= */
+
+/* TABLET */
+@media screen and (min-width: 557px){
+
+    /* Acá después voy a acomodar mejor la distribución
+       para pantallas medianas */
+    
+}
+
+
+/* DESKTOP */
+@media screen and (min-width: 992px){
+
+    /* Acá después voy a reorganizar la página para pc,
+       aprovechando mejor el ancho */
+
+}
