@@ -183,6 +183,7 @@ header nav{
     color: #1f2a1f;
 }
 
+
 /* =======================================================
    SECCIÓN PROMO / BANNER
    Acá uso una imagen de fondo con overlay oscuro para que
@@ -245,7 +246,7 @@ header nav{
 /* Botón secundario */
 #promo .botones a:last-child{
     color: white;
-    background-color: #6c944f;
+    background-color: rgba(108, 148, 79, 0.5);
 }
 
 /* Pastillas informativas del banner */
@@ -370,6 +371,7 @@ header nav{
     justify-content: center;
     align-items: center;
     padding: 0.4rem;
+    aspect-ratio: 1 / 1;
 }
 
 #condiciones ul li img{
@@ -380,14 +382,11 @@ header nav{
     box-shadow: 0 0.25rem 0.8rem rgba(0, 0, 0, 0.12);
 }
 
-#condiciones ul li:nth-child(2) img{
-    width: 66%;
-}
 
 /* =======================================================
    PRODUCTOS
-   Acá también trabajo con cards para mostrar algunos
-   productos destacados.
+   Acá trabajo con cards para mostrar los productos
+   destacados y también dejo preparada la foto con sticker.
 ======================================================= */
 
 #productos{
@@ -417,17 +416,6 @@ header nav{
     gap: 0.5rem;
 }
 
-#productos ul li h3{
-    font-family: "DM Serif Display", serif;
-    margin-top: 0.5rem;
-    margin-bottom: 0;
-}
-
-#productos ul li p{
-    font-family: "Source Sans 3", sans-serif;
-    margin-top: 0;
-}
-
 #productos ul li a{
     font-family: "Source Sans 3", sans-serif;
     font-weight: 600;
@@ -438,6 +426,28 @@ header nav{
     border-radius: 0.5rem;
     margin-top: 0.5rem;
     width: fit-content;
+}
+
+/* FOTO CON STICKER */
+.foto-con-sticker{
+    position: relative;
+    width: 100%;
+}
+
+.foto-con-sticker .img-base{
+    width: 100%;
+    display: block;
+    border-radius: 0.8rem;
+}
+
+.foto-con-sticker .sticker-promo{
+    position: absolute;
+    top: 0.2rem;
+    right: 0.2rem;
+    width: 9rem;
+    height: auto;
+    z-index: 3;
+    pointer-events: none;
 }
 
 
@@ -478,6 +488,7 @@ header nav{
     display: flex;
     flex-direction: column;
 }
+
 #carrusel ul li img{
     width: 100%;
     height: 10.5rem;
@@ -500,6 +511,7 @@ header nav{
     font-size: 0.95rem;
     color: white;
 }
+
 
 /* =======================================================
    HISTORIA
@@ -630,6 +642,7 @@ footer p{
     opacity: 0.9;
 }
 
+
 /* =======================================================
    POP UPS
    Los pop ups están hechos con :target.
@@ -715,6 +728,7 @@ footer p{
     background-color: #476938;
 }
 
+
 /* =======================================================
    MEDIA QUERIES
    Acá dejo preparados los cortes para seguir después.
@@ -722,19 +736,658 @@ footer p{
    o sea que lo que está arriba ya corresponde a celular.
 ======================================================= */
 
+
 /* TABLET */
 @media screen and (min-width: 557px){
 
-    /* Acá después voy a acomodar mejor la distribución
-       para pantallas medianas */
-    
+    /* =======================================================
+       AJUSTES GENERALES
+       Acá doy más aire porque en tablet ya tengo más ancho.
+    ======================================================== */
+
+    section{
+        padding: 2rem;
+    }
+
+    h2{
+        font-size: 2.2rem;
+    }
+
+    h3{
+        font-size: 1.35rem;
+    }
+
+    p{
+        font-size: 1.05rem;
+        line-height: 1.7rem;
+    }
+
+    /* =======================================================
+       HEADER
+       En tablet ya muestro el menú normal y oculto el
+       hamburguesa con su ventana mobile.
+    ======================================================== */
+
+    header{
+        padding: 1.5rem 2rem;
+    }
+
+    .abrir-menu{
+        display: none;
+    }
+
+    .menu-mobile{
+        display: none;
+    }
+
+    header nav{
+        display: block;
+    }
+
+    header nav ul{
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        gap: 1.2rem;
+    }
+
+    header nav ul li a{
+        font-size: 1rem;
+        color: #1f2a1f;
+    }
+
+    /* =======================================================
+       PROMO
+       Acá aprovecho más el ancho: agrando texto, pongo los
+       botones en fila y las pastillas también.
+    ======================================================== */
+
+    #promo{
+        padding: 3rem 2rem 5rem 2rem;
+        gap: 1.2rem;
+    }
+
+    #promo h2{
+        width: 55%;
+        font-size: 3.1rem;
+        line-height: 3.1rem;
+    }
+
+    #promo p{
+        width: 55%;
+        font-size: 1.1rem;
+        line-height: 1.7rem;
+    }
+
+    #promo .botones{
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    #promo .botones a{
+        width: auto;
+        min-width: 12rem;
+    }
+
+    #promo ul{
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    #promo ul li{
+        width: auto;
+    }
+
+    /* =======================================================
+       BENEFICIOS
+       Acá paso las cards a dos columnas. La tercera ocupa
+       todo el ancho para que no quede una columna vacía.
+    ======================================================== */
+
+    #beneficios{
+        padding: 2.5rem 2rem 2rem 2rem;
+    }
+
+    #beneficios ul{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.2rem;
+    }
+
+    #beneficios ul li:last-child{
+        grid-column: 1 / 3;
+    }
+
+    /* =======================================================
+       CONDICIONES
+       En tablet pongo los cuatro íconos en una sola fila.
+    ======================================================== */
+
+    #condiciones{
+        padding: 2rem;
+    }
+
+    #condiciones ul{
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+    }
+
+    #condiciones ul li img{
+        width: 80%;
+    }
+
+    /* =======================================================
+       PRODUCTOS
+       Acá uso dos columnas y dejo la tercera card ocupando
+       todo el ancho para que cierre mejor.
+    ======================================================== */
+
+    #productos{
+        padding: 2rem;
+    }
+
+    #productos ul{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.2rem;
+    }
+
+    #productos ul li:last-child{
+        grid-column: 1 / 3;
+    }
+
+    #productos .sticker-promo{
+        width: 10rem;
+    }
+
+    /* =======================================================
+       CARRUSEL
+       En tablet lo dejo todavía deslizable, pero con cards
+       un poco más grandes.
+    ======================================================== */
+
+    #carrusel{
+        padding: 2rem;
+    }
+
+    #carrusel ul{
+        gap: 1.2rem;
+    }
+
+    #carrusel ul li{
+        min-width: 16rem;
+        max-width: 16rem;
+    }
+
+    #carrusel ul li img{
+        height: 11rem;
+    }
+
+    /* =======================================================
+       HISTORIA
+       Acá ya hago una composición en dos columnas:
+       imagen a la izquierda y texto a la derecha.
+    ======================================================== */
+
+    #historia{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        align-items: center;
+        padding: 2rem;
+    }
+
+    #historia img{
+        grid-column: 1 / 2;
+        grid-row: 1 / 4;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 1rem;
+    }
+
+    #historia h2{
+        grid-column: 2 / 3;
+        margin-bottom: 0.3rem;
+    }
+
+    #historia p{
+        grid-column: 2 / 3;
+    }
+
+    #historia a{
+        grid-column: 2 / 3;
+    }
+
+    /* =======================================================
+       FOOTER TABLET
+       Acá centro todo para que se vea más ordenado visualmente.
+    ======================================================== */
+
+    footer{
+        padding: 3rem 2.5rem 10rem 2.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.4rem;
+        text-align: center;
+    }
+
+    footer h2{
+        font-size: 2.6rem;
+        margin: 0;
+    }
+
+    footer > p:not(.footer-copy){
+        max-width: 28rem;
+        margin: 0;
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+    }
+
+    .footer-menu{
+        width: 100%;
+    }
+
+    .footer-menu ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1.5rem 2.2rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    .footer-menu ul li a{
+        font-size: 1.25rem;
+    }
+
+    .footer-redes{
+        justify-content: center;
+        gap: 3rem;
+        margin-top: 0.3rem;
+    }
+
+    .footer-redes li a img{
+        width: 2.2rem;
+        height: 2.2rem;
+    }
+
+    .footer-copy{
+        text-align: center;
+        font-size: 1rem;
+        margin-top: 0.3rem;
+    }
+
+    .footer-deco{
+        bottom: 0.3rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        justify-content: center;
+    }
+
+    .footer-deco img{
+        max-width: 60rem;
+        opacity: 0.20;
+    }
+
+    /* =======================================================
+       POPUPS
+       En tablet les doy un poco más de ancho.
+    ======================================================== */
+
+    .contenido-popup{
+        max-width: 28rem;
+        padding: 1.3rem;
+    }
 }
 
 
 /* DESKTOP */
 @media screen and (min-width: 992px){
 
-    /* Acá después voy a reorganizar la página para pc,
-       aprovechando mejor el ancho */
+    /* =======================================================
+       AJUSTES GENERALES
+       En pc doy más aire y agrando jerarquías.
+    ======================================================== */
 
+    section{
+        padding: 4rem;
+    }
+
+    h2{
+        font-size: 2.8rem;
+    }
+
+    h3{
+        font-size: 1.5rem;
+    }
+
+    p{
+        font-size: 1.1rem;
+        line-height: 1.8rem;
+    }
+
+    /* =======================================================
+       HEADER
+       En pc muestro el nav horizontal y saco el menú mobile.
+    ======================================================== */
+
+    header{
+        padding: 1.5rem 4rem;
+    }
+
+    .abrir-menu{
+        display: none;
+    }
+
+    .menu-mobile{
+        display: none;
+    }
+
+    header nav{
+        display: block;
+    }
+
+    header nav ul{
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    header nav ul li a{
+        font-size: 1rem;
+        color: #1f2a1f;
+    }
+
+    /* =======================================================
+       PROMO
+       Acá uso 12 columnas.
+       El contenido ocupa la izquierda y dejo respirar
+       la imagen/fondo del lado derecho.
+    ======================================================== */
+
+    #promo{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1rem;
+        padding: 4rem 4rem 6rem 4rem;
+        align-items: start;
+    }
+
+    #promo h2{
+        grid-column: 1 / 7;
+        width: 100%;
+        font-size: 4.2rem;
+        line-height: 4.1rem;
+    }
+
+    #promo p{
+        grid-column: 1 / 6;
+        width: 100%;
+        font-size: 1.15rem;
+        line-height: 1.8rem;
+    }
+
+    #promo .botones{
+        grid-column: 1 / 7;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    #promo .botones a{
+        width: auto;
+        min-width: 12rem;
+    }
+
+    #promo ul{
+        grid-column: 1 / 9;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    #promo ul li{
+        width: auto;
+    }
+
+    /* =======================================================
+       BENEFICIOS
+       12 columnas: cada card ocupa 4 columnas.
+    ======================================================== */
+
+    #beneficios{
+        padding: 3.5rem 4rem;
+    }
+
+    #beneficios h2{
+        text-align: center;
+    }
+
+    #beneficios ul{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1.5rem;
+    }
+
+    #beneficios ul li{
+        grid-column: span 4;
+    }
+
+    #beneficios ul li:last-child{
+        grid-column: span 4;
+    }
+
+    /* =======================================================
+       CONDICIONES
+       12 columnas: 4 cards de 3 columnas cada una.
+    ======================================================== */
+
+    #condiciones{
+        padding: 3rem 4rem;
+    }
+
+    #condiciones ul{
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1.2rem;
+    }
+
+    #condiciones ul li{
+        grid-column: span 3;
+    }
+
+    #condiciones ul li img{
+        width: 85%;
+    }
+
+    /* =======================================================
+       PRODUCTOS
+       12 columnas: cada producto ocupa 4 columnas.
+    ======================================================== */
+
+    #productos{
+        padding: 3.5rem 4rem;
+    }
+
+    #productos h2{
+        text-align: center;
+    }
+
+    #productos ul{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1.5rem;
+    }
+
+    #productos ul li{
+        grid-column: span 4;
+    }
+
+    #productos ul li:last-child{
+        grid-column: span 4;
+    }
+
+    #productos .sticker-promo{
+        width: 11rem;
+    }
+
+    /* =======================================================
+       CARRUSEL
+       En pc deja de ser deslizable y pasa a grilla.
+       Cada card ocupa 3 columnas.
+    ======================================================== */
+
+    #carrusel{
+        padding: 3rem 4rem;
+    }
+
+    #carrusel h2{
+        text-align: center;
+    }
+
+    #carrusel ul{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1.5rem;
+        overflow-x: visible;
+    }
+
+    #carrusel ul li{
+        grid-column: span 3;
+        min-width: auto;
+        max-width: none;
+    }
+
+    #carrusel ul li img{
+        height: 12rem;
+    }
+
+    /* =======================================================
+       HISTORIA
+       12 columnas: imagen a la izquierda y texto a la derecha.
+    ======================================================== */
+
+    #historia{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 2rem;
+        align-items: center;
+        padding: 4rem;
+    }
+
+    #historia img{
+        grid-column: 1 / 7;
+        grid-row: 1 / 4;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 1rem;
+    }
+
+    #historia h2{
+        grid-column: 7 / 13;
+        margin-bottom: 0.3rem;
+    }
+
+    #historia p{
+        grid-column: 7 / 13;
+    }
+
+    #historia a{
+        grid-column: 7 / 13;
+    }
+
+    /* =======================================================
+       FOOTER DESKTOP
+       Acá sigo la lógica de tablet, pero con más aire y escala.
+    ======================================================= */
+
+    footer{
+        padding: 4rem 4rem 12rem 4rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.6rem;
+        text-align: center;
+    }
+
+    footer h2{
+        font-size: 4rem;
+        margin: 0;
+    }
+
+    footer > p:not(.footer-copy){
+        max-width: 34rem;
+        margin: 0;
+        font-size: 1.40rem;
+        line-height: 1.9rem;
+    }
+
+    .footer-menu{
+        width: 100%;
+    }
+
+    .footer-menu ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1.5rem 3rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    .footer-menu ul li a{
+        font-size: 1.8rem;
+    }
+
+    .footer-redes{
+        justify-content: center;
+        gap: 4.5rem;
+        margin-top: 0.8rem;
+    }
+
+    .footer-redes li a img{
+        width: 4.4rem;
+        height: 3.4rem;
+    }
+
+    .footer-copy{
+        text-align: center;
+        font-size: 1rem;
+        margin-top: 0.5rem;
+    }
+
+    .footer-deco{
+        bottom: 0.4rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        justify-content: center;
+    }
+
+    .footer-deco img{
+        max-width: 80rem;
+        opacity: 0.2;
+    }
+
+    /* =======================================================
+       POPUPS
+       En pc les doy más ancho.
+    ======================================================== */
+
+    .contenido-popup{
+        max-width: 34rem;
+        padding: 1.5rem;
+    }
+
+    .contenido-popup img{
+        max-height: 18rem;
+        object-fit: cover;
+    }
 }
