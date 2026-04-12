@@ -19,20 +19,25 @@
 
 <body>
 
-    <!-- =======================================================
-         HEADER
-         En mobile queda la marca y el botón hamburguesa.
-         El nav normal está en el HTML pero oculto desde CSS.
-    ======================================================== -->
+        <!-- =======================================================
+             header mobile
+        ======================================================== -->
     <header>
         <h1>BONSAI</h1>
 
-        <a href="#menu-mobile" class="abrir-menu">
-            <img src="img/menu.png" alt="Abrir menú">
-        </a>
+        <nav id="menu">
+            <ul id="hamburguesa">
+                <li>
+                    <a href="#hamburguesa">
+                        <img src="img/menu.png" alt="Abrir menú">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">×</a>
+                </li>
+            </ul>
 
-        <nav>
-            <ul>
+            <ul id="barra">
                 <li><a href="#promo">Inicio</a></li>
                 <li><a href="#beneficios">Beneficios</a></li>
                 <li><a href="#productos">Productos</a></li>
@@ -41,24 +46,6 @@
             </ul>
         </nav>
     </header>
-
-    <!-- =======================================================
-         MENÚ MOBILE
-         Se abre al tocar el hamburguesa.
-    ======================================================== -->
-    <div id="menu-mobile" class="menu-mobile">
-        <div class="contenido-menu">
-            <a href="#" class="cerrar-menu">×</a>
-
-            <ul>
-                <li><a href="#promo">Inicio</a></li>
-                <li><a href="#beneficios">Beneficios</a></li>
-                <li><a href="#productos">Productos</a></li>
-                <li><a href="#historia">Nosotros</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </div>
-    </div>
 
     <main>
         <!-- =======================================================

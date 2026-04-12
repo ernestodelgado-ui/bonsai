@@ -86,103 +86,113 @@ p{
 
 
 /* =======================================================
-   HEADER
-   En mobile dejo el logo a la izquierda y el ícono del
-   menú hamburguesa a la derecha.
+   HEADER MOBILE
+   Menú hamburguesa con :target
 ======================================================= */
 
-header{
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem;
+@media screen and (max-width: 556px){
+
+    header{
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.2rem 1.5rem;
+        position: relative;
+    }
+
+    header h1{
+        font-family: "DM Serif Display", serif;
+        font-size: 2rem;
+        margin: 0;
+    }
+
+    header nav{
+        width: auto;
+        position: relative;
+    }
+
+    #hamburguesa{
+        list-style: none;
+        position: relative;
+        width: 2.8rem;
+        height: 2.8rem;
+        margin: 0;
+        padding: 0;
+        z-index: 30;
+    }
+
+    #hamburguesa li{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    #hamburguesa li a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+    }
+
+    #hamburguesa li:first-child a img{
+        width: 2.5rem;
+        height: auto;
+        display: block;
+    }
+
+    #hamburguesa li:last-child{
+        display: none;
+    }
+
+    #hamburguesa li:last-child a{
+        background-color: #ffffff;
+        color: #1f2a1f;
+        font-size: 2rem;
+        line-height: 1;
+        border-radius: 0.4rem;
+    }
+
+    #barra{
+        list-style: none;
+        display: none;
+        flex-direction: column;
+        gap: 0.9rem;
+        position: absolute;
+        top: calc(100% + 0.8rem);
+        right: 0;
+        min-width: 13rem;
+        background-color: #ffffff;
+        padding: 1rem 1.2rem;
+        border-radius: 1rem;
+        box-shadow: 0 0.5rem 1.2rem rgba(0, 0, 0, 0.15);
+        z-index: 25;
+    }
+
+    #barra li a{
+        font-family: "Source Sans 3", sans-serif;
+        font-size: 1.05rem;
+        font-weight: 600;
+        color: #1f2a1f;
+    }
+
+    #hamburguesa:target li:first-child{
+        display: none;
+    }
+
+    #hamburguesa:target li:last-child{
+        display: block;
+    }
+
+    #hamburguesa:target + #barra{
+        display: flex;
+    }
 }
-
-header h1{
-    font-family: "DM Serif Display", serif;
-    font-size: 2rem;
-    margin: 0;
-}
-
-header a img{
-    width: 2.5rem;
-    height: auto;
-    display: block;
-}
-
-/* En mobile oculto el nav porque se reemplaza por el menú hamburguesa */
-header nav{
-    display: none;
-}
-
-
-/* =======================================================
-   MENÚ MOBILE
-   Lo hago con :target para que se abra como una ventana.
-======================================================= */
-
-.abrir-menu{
-    display: block;
-}
-
-.abrir-menu img{
-    width: 2.5rem;
-    height: auto;
-    display: block;
-}
-
-.menu-mobile{
-    background-color: rgba(0, 0, 0, 0.35);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    padding: 1.5rem;
-    display: none;
-    align-items: flex-start;
-    justify-content: center;
-    z-index: 1200;
-}
-
-.menu-mobile:target{
-    display: flex;
-}
-
-.contenido-menu{
-    background-color: #ffffff;
-    width: 100%;
-    border-radius: 1rem;
-    padding: 2.5rem 1.5rem 1.5rem 1.5rem;
-    position: relative;
-}
-
-.cerrar-menu{
-    font-family: "Source Sans 3", sans-serif;
-    font-size: 2rem;
-    color: #1f2a1f;
-    position: absolute;
-    top: 1rem;
-    right: 1.2rem;
-    line-height: 1;
-}
-
-.contenido-menu ul{
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.contenido-menu ul li a{
-    font-family: "Source Sans 3", sans-serif;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #1f2a1f;
-}
-
 
 /* =======================================================
    SECCIÓN PROMO / BANNER
@@ -394,6 +404,28 @@ header nav{
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    position: relative;
+    padding-top: 4rem;
+}
+
+#productos::before{
+    content: "";
+    position: absolute;
+    top: -3.7rem;
+    left: 0;
+    width: 100%;
+    height: 6rem;
+    background-image: url("../img/hojasverdes.png");
+    background-repeat: repeat-x;
+    background-position: left bottom;
+    background-size: auto 6rem;
+    pointer-events: none;
+    z-index: 2;
+}
+
+#productos > *{
+    position: relative;
+    z-index: 3;
 }
 
 #productos h2{
@@ -442,9 +474,9 @@ header nav{
 
 .foto-con-sticker .sticker-promo{
     position: absolute;
-    top: 0.2rem;
-    right: 0.2rem;
-    width: 9rem;
+    top: 0.4rem;
+    right: 0.4rem;
+    width: 8rem;
     height: auto;
     z-index: 3;
     pointer-events: none;
@@ -555,7 +587,12 @@ header nav{
 ======================================================= */
 
 footer{
-    background: linear-gradient(90deg, #18311d 0%, #1f3a22 50%, #18311d 100%);
+    background-image:
+        url("../img/tierra.png"),
+        linear-gradient(90deg, rgba(24, 49, 29, 1) 0%, rgba(31, 58, 34, 1) 50%, rgba(24, 49, 29, 1) 100%);
+    background-repeat: repeat, no-repeat;
+    background-size: 12rem, cover;
+    background-position: center, center;
     color: white;
     padding: 2.5rem 1.5rem 8rem 1.5rem;
     text-align: center;
@@ -737,14 +774,12 @@ footer p{
 ======================================================= */
 
 
-/* TABLET */
-@media screen and (min-width: 557px){
+/* =======================================================
+   TABLET
+======================================================= */
+@media screen and (min-width: 557px) and (max-width: 991px){
 
-    /* =======================================================
-       AJUSTES GENERALES
-       Acá doy más aire porque en tablet ya tengo más ancho.
-    ======================================================== */
-
+    /* AJUSTES GENERALES */
     section{
         padding: 2rem;
     }
@@ -762,46 +797,51 @@ footer p{
         line-height: 1.7rem;
     }
 
-    /* =======================================================
-       HEADER
-       En tablet ya muestro el menú normal y oculto el
-       hamburguesa con su ventana mobile.
-    ======================================================== */
-
+    /* HEADER TABLET */
     header{
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
         padding: 1.5rem 2rem;
     }
 
-    .abrir-menu{
-        display: none;
+    header h1{
+        font-size: 2rem;
+        margin: 0;
     }
 
-    .menu-mobile{
+    #hamburguesa{
         display: none;
     }
 
     header nav{
-        display: block;
+        width: auto;
+        position: static;
     }
 
-    header nav ul{
+    #barra{
         list-style: none;
         display: flex;
+        position: static;
         flex-direction: row;
         gap: 1.2rem;
+        margin-top: 0;
+        padding: 0;
+        min-width: auto;
+        background-color: transparent;
+        border-radius: 0;
+        box-shadow: none;
     }
 
-    header nav ul li a{
+    #barra li a{
         font-size: 1rem;
         color: #1f2a1f;
     }
 
-    /* =======================================================
-       PROMO
-       Acá aprovecho más el ancho: agrando texto, pongo los
-       botones en fila y las pastillas también.
-    ======================================================== */
-
+    /* PROMO */
     #promo{
         padding: 3rem 2rem 5rem 2rem;
         gap: 1.2rem;
@@ -840,12 +880,7 @@ footer p{
         width: auto;
     }
 
-    /* =======================================================
-       BENEFICIOS
-       Acá paso las cards a dos columnas. La tercera ocupa
-       todo el ancho para que no quede una columna vacía.
-    ======================================================== */
-
+    /* BENEFICIOS */
     #beneficios{
         padding: 2.5rem 2rem 2rem 2rem;
     }
@@ -860,11 +895,7 @@ footer p{
         grid-column: 1 / 3;
     }
 
-    /* =======================================================
-       CONDICIONES
-       En tablet pongo los cuatro íconos en una sola fila.
-    ======================================================== */
-
+    /* CONDICIONES */
     #condiciones{
         padding: 2rem;
     }
@@ -878,12 +909,7 @@ footer p{
         width: 80%;
     }
 
-    /* =======================================================
-       PRODUCTOS
-       Acá uso dos columnas y dejo la tercera card ocupando
-       todo el ancho para que cierre mejor.
-    ======================================================== */
-
+    /* PRODUCTOS */
     #productos{
         padding: 2rem;
     }
@@ -899,15 +925,10 @@ footer p{
     }
 
     #productos .sticker-promo{
-        width: 10rem;
+        width: 9rem;
     }
 
-    /* =======================================================
-       CARRUSEL
-       En tablet lo dejo todavía deslizable, pero con cards
-       un poco más grandes.
-    ======================================================== */
-
+    /* CARRUSEL */
     #carrusel{
         padding: 2rem;
     }
@@ -925,12 +946,7 @@ footer p{
         height: 11rem;
     }
 
-    /* =======================================================
-       HISTORIA
-       Acá ya hago una composición en dos columnas:
-       imagen a la izquierda y texto a la derecha.
-    ======================================================== */
-
+    /* HISTORIA */
     #historia{
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -960,11 +976,7 @@ footer p{
         grid-column: 2 / 3;
     }
 
-    /* =======================================================
-       FOOTER TABLET
-       Acá centro todo para que se vea más ordenado visualmente.
-    ======================================================== */
-
+    /* FOOTER TABLET */
     footer{
         padding: 3rem 2.5rem 10rem 2.5rem;
         display: flex;
@@ -1034,11 +1046,7 @@ footer p{
         opacity: 0.20;
     }
 
-    /* =======================================================
-       POPUPS
-       En tablet les doy un poco más de ancho.
-    ======================================================== */
-
+    /* POPUPS */
     .contenido-popup{
         max-width: 28rem;
         padding: 1.3rem;
@@ -1046,14 +1054,12 @@ footer p{
 }
 
 
-/* DESKTOP */
+/* =======================================================
+   DESKTOP
+======================================================= */
 @media screen and (min-width: 992px){
 
-    /* =======================================================
-       AJUSTES GENERALES
-       En pc doy más aire y agrando jerarquías.
-    ======================================================== */
-
+    /* AJUSTES GENERALES */
     section{
         padding: 4rem;
     }
@@ -1071,46 +1077,51 @@ footer p{
         line-height: 1.8rem;
     }
 
-    /* =======================================================
-       HEADER
-       En pc muestro el nav horizontal y saco el menú mobile.
-    ======================================================== */
-
+    /* HEADER DESKTOP */
     header{
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
         padding: 1.5rem 4rem;
     }
 
-    .abrir-menu{
-        display: none;
+    header h1{
+        font-size: 2rem;
+        margin: 0;
     }
 
-    .menu-mobile{
+    #hamburguesa{
         display: none;
     }
 
     header nav{
-        display: block;
+        width: auto;
+        position: static;
     }
 
-    header nav ul{
+    #barra{
         list-style: none;
         display: flex;
+        position: static;
         flex-direction: row;
         gap: 2rem;
+        margin-top: 0;
+        padding: 0;
+        min-width: auto;
+        background-color: transparent;
+        border-radius: 0;
+        box-shadow: none;
     }
 
-    header nav ul li a{
+    #barra li a{
         font-size: 1rem;
         color: #1f2a1f;
     }
 
-    /* =======================================================
-       PROMO
-       Acá uso 12 columnas.
-       El contenido ocupa la izquierda y dejo respirar
-       la imagen/fondo del lado derecho.
-    ======================================================== */
-
+    /* PROMO */
     #promo{
         display: grid;
         grid-template-columns: repeat(12, 1fr);
@@ -1156,11 +1167,7 @@ footer p{
         width: auto;
     }
 
-    /* =======================================================
-       BENEFICIOS
-       12 columnas: cada card ocupa 4 columnas.
-    ======================================================== */
-
+    /* BENEFICIOS */
     #beneficios{
         padding: 3.5rem 4rem;
     }
@@ -1183,11 +1190,7 @@ footer p{
         grid-column: span 4;
     }
 
-    /* =======================================================
-       CONDICIONES
-       12 columnas: 4 cards de 3 columnas cada una.
-    ======================================================== */
-
+    /* CONDICIONES */
     #condiciones{
         padding: 3rem 4rem;
     }
@@ -1205,11 +1208,7 @@ footer p{
         width: 85%;
     }
 
-    /* =======================================================
-       PRODUCTOS
-       12 columnas: cada producto ocupa 4 columnas.
-    ======================================================== */
-
+    /* PRODUCTOS */
     #productos{
         padding: 3.5rem 4rem;
     }
@@ -1233,15 +1232,10 @@ footer p{
     }
 
     #productos .sticker-promo{
-        width: 11rem;
+        width: 10rem;
     }
 
-    /* =======================================================
-       CARRUSEL
-       En pc deja de ser deslizable y pasa a grilla.
-       Cada card ocupa 3 columnas.
-    ======================================================== */
-
+    /* CARRUSEL */
     #carrusel{
         padding: 3rem 4rem;
     }
@@ -1267,11 +1261,7 @@ footer p{
         height: 12rem;
     }
 
-    /* =======================================================
-       HISTORIA
-       12 columnas: imagen a la izquierda y texto a la derecha.
-    ======================================================== */
-
+    /* HISTORIA */
     #historia{
         display: grid;
         grid-template-columns: repeat(12, 1fr);
@@ -1302,11 +1292,7 @@ footer p{
         grid-column: 7 / 13;
     }
 
-    /* =======================================================
-       FOOTER DESKTOP
-       Acá sigo la lógica de tablet, pero con más aire y escala.
-    ======================================================= */
-
+    /* FOOTER DESKTOP */
     footer{
         padding: 4rem 4rem 12rem 4rem;
         display: flex;
@@ -1376,11 +1362,7 @@ footer p{
         opacity: 0.2;
     }
 
-    /* =======================================================
-       POPUPS
-       En pc les doy más ancho.
-    ======================================================== */
-
+    /* POPUPS */
     .contenido-popup{
         max-width: 34rem;
         padding: 1.5rem;
