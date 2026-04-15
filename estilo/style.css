@@ -120,7 +120,7 @@ header h1{
     header h1{
         position: absolute;
         left: 50%;
-        top: 50%;
+        top: 58%;
         transform: translate(-50%, -50%);
         font-size: 2rem;
         line-height: 1;
@@ -128,6 +128,7 @@ header h1{
         color: #1f2a1f;
         white-space: nowrap;
     }
+
     header nav{
         width: auto;
         position: static;
@@ -181,13 +182,13 @@ header h1{
         flex-direction: column;
         gap: 0;
         position: absolute;
-        top: 100%;
+        top: 85%;
         left: 0;
         width: 100%;
         height: auto;
         min-height: auto;
         background-color: #ffffff;
-        padding: 1rem 0 1rem 0;
+        padding: 0.3rem 0 1rem 0;
         z-index: 85;
         overflow: visible;
     }
@@ -795,12 +796,10 @@ footer p{
     header{
         background-color: #ffffff;
         display: flex;
-        flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        text-align: left;
-        padding: 1.5rem 2rem;
-        height: auto;
+        min-height: 5rem;
+        padding: 0 2rem;
         position: relative;
     }
 
@@ -809,26 +808,35 @@ footer p{
         margin: 0;
         color: #1f2a1f;
         line-height: 1;
-        position: static;
+        position: relative;
+        top: 0.18rem;
         transform: none;
-        white-space: normal;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+
+    header nav{
+        width: auto;
+        position: relative;
+        top: 0.18rem;
+        display: flex;
+        align-items: center;
+        height: 100%;
     }
 
     #hamburguesa{
         display: none;
     }
 
-    header nav{
-        width: auto;
-        position: static;
-    }
 
     #barra{
         list-style: none;
         display: flex;
-        position: static;
         flex-direction: row;
-        gap: 1.2rem;
+        align-items: center;
+        gap: 1.4rem;
         margin: 0;
         padding: 0;
         min-height: auto;
@@ -841,6 +849,8 @@ footer p{
 
     #barra li{
         width: auto;
+        display: flex;
+        align-items: center;
     }
 
     #barra li a{
@@ -848,8 +858,10 @@ footer p{
         font-size: 1rem;
         font-weight: 600;
         color: #1f2a1f;
-        display: block;
+        display: flex;
+        align-items: center;
         padding: 0;
+        line-height: 1;
         text-align: left;
         text-transform: none;
     }
@@ -1085,12 +1097,10 @@ footer p{
     header{
         background-color: #ffffff;
         display: flex;
-        flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        text-align: left;
-        padding: 1.5rem 4rem;
-        height: auto;
+        min-height: 5.25rem;
+        padding: 0 4rem;
         position: relative;
     }
 
@@ -1099,25 +1109,33 @@ footer p{
         margin: 0;
         color: #1f2a1f;
         line-height: 1;
-        position: static;
+        position: relative;
+        top: 0.18rem;
         transform: none;
-        white-space: normal;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+
+    header nav{
+        width: auto;
+        position: relative;
+        top: 0.18rem;
+        display: flex;
+        align-items: center;
+        height: 100%;
     }
 
     #hamburguesa{
         display: none;
     }
 
-    header nav{
-        width: auto;
-        position: static;
-    }
-
     #barra{
         list-style: none;
         display: flex;
-        position: static;
         flex-direction: row;
+        align-items: center;
         gap: 2rem;
         margin: 0;
         padding: 0;
@@ -1131,6 +1149,8 @@ footer p{
 
     #barra li{
         width: auto;
+        display: flex;
+        align-items: center;
     }
 
     #barra li a{
@@ -1138,8 +1158,10 @@ footer p{
         font-size: 1rem;
         font-weight: 600;
         color: #1f2a1f;
-        display: block;
+        display: flex;
+        align-items: center;
         padding: 0;
+        line-height: 1;
         text-align: left;
         text-transform: none;
     }
