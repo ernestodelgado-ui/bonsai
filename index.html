@@ -1,21 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Define la codificación de caracteres -->
     <meta charset="UTF-8">
+
+    <!-- Hace que la web se adapte bien a celular, tablet y pc -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título que aparece en la pestaña -->
     <title>BONSAI</title>
+
+    <!-- Vincula el archivo CSS principal -->
     <link rel="stylesheet" href="estilo/style.css">
+
+    <!-- Favicon en formato webp -->
     <link rel="icon" href="img/favicon.webp" type="image/webp">
 </head>
 
 <body>
+
+    <!-- =======================================================
+         HEADER
+         BONSAI queda como h1.
+         El menú se abre con la lógica de tu profe:
+         el target cae en #menu y desde ahí se despliega #barra
+    ======================================================== -->
     <header>
         <h1>BONSAI</h1>
 
         <nav id="menu">
             <ul id="hamburguesa">
                 <li>
-                    <a href="#hamburguesa">
+                    <a href="#menu">
                         <img src="img/menu.webp" alt="Abrir menú">
                     </a>
                 </li>
@@ -35,6 +51,10 @@
     </header>
 
     <main>
+
+        <!-- =======================================================
+             PROMO / BANNER PRINCIPAL
+        ======================================================== -->
         <section id="promo">
             <h2>Creá un futuro más verde</h2>
 
@@ -54,6 +74,9 @@
             </ul>
         </section>
 
+        <!-- =======================================================
+             BENEFICIOS
+        ======================================================== -->
         <section id="beneficios">
             <h2>Las más populares de BONSAI</h2>
 
@@ -81,6 +104,9 @@
             </ul>
         </section>
 
+        <!-- =======================================================
+             CONDICIONES
+        ======================================================== -->
         <section id="condiciones">
             <h2>Condiciones ideales</h2>
 
@@ -103,6 +129,9 @@
             </ul>
         </section>
 
+        <!-- =======================================================
+             PRODUCTOS
+        ======================================================== -->
         <section id="productos">
             <h2>Productos destacados</h2>
 
@@ -139,6 +168,9 @@
             </ul>
         </section>
 
+        <!-- =======================================================
+             CARRUSEL
+        ======================================================== -->
         <section id="carrusel">
             <h2>Espacios BONSAI</h2>
 
@@ -169,19 +201,31 @@
             </ul>
         </section>
 
+        <!-- =======================================================
+             HISTORIA
+        ======================================================== -->
         <section id="historia">
-            <img src="img/historia.webp" alt="Espacio interior con plantas">
+            <figure class="historia-img">
+                <picture>
+                    <source media="(max-width: 556px)" srcset="img/historia-celu.webp.webp">
+                    <source media="(max-width: 991px)" srcset="img/historia-tablet.webp.webp">
+                    <img src="img/historia-pc.webp.webp" alt="Espacio interior con plantas">
+                </picture>
+            </figure>
 
             <h2>Nuestra historia</h2>
 
             <p>
-                BONSAI nace de la idea de acercar la naturaleza a la vida cotidiana de una forma simple, armónica y accesible. Creemos que una planta no es solo un objeto decorativo, sino una presencia viva que transforma los espacios, mejora el ánimo y genera una conexión más auténtica con el entorno. Por eso seleccionamos especies pensadas para adaptarse a interiores, acompañadas por macetas y propuestas visuales que combinan diseño, calma y bienestar. Nuestro objetivo es que cada persona pueda crear un rincón verde propio, sin necesidad de ser experta, incorporando frescura, equilibrio y belleza natural a su casa, estudio o lugar de trabajo. En BONSAI entendemos el cuidado de las plantas como una experiencia cotidiana que invita a bajar el ritmo, observar más y habitar mejor cada espacio.
+                BONSAI nace de la idea de acercar la naturaleza a la vida cotidiana de una forma simple, armónica y accesible. Creemos que una planta no es solo un objeto decorativo, sino una presencia viva que transforma los espacios, mejora el ánimo y genera una conexión más auténtica con el entorno. Por eso seleccionamos especies pensadas para adaptarse a interiores, acompañadas por macetas y propuestas visuales que combinan diseño, calma y bienestar. Nuestro objetivo es que cada persona pueda crear un rincón verde propio, sin necesidad de ser experta, incorporando frescura, equilibrio y belleza natural a su casa, estudio o lugar de trabajo.
             </p>
 
             <a href="#">Leer más</a>
         </section>
-    </main>
+            </main>
 
+    <!-- =======================================================
+         FOOTER
+    ======================================================== -->
     <footer id="contacto">
         <h2>BONSAI</h2>
 
@@ -223,6 +267,9 @@
         </div>
     </footer>
 
+    <!-- =======================================================
+         POPUPS
+    ======================================================== -->
     <div id="popup1" class="popup">
         <div class="contenido-popup">
             <a href="#" class="cerrar">×</a>
@@ -266,5 +313,6 @@
             </p>
         </div>
     </div>
+
 </body>
 </html>
