@@ -1,18 +1,13 @@
 /* =======================================================
-   TIPOGRAFÍAS
-======================================================= */
-
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:wght@400;500;600;700&display=swap');
-
-
-/* =======================================================
    RESET GENERAL
+   Las tipografías se cargan desde el <link> del HTML.
 ======================================================= */
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Source Sans 3", Arial, Helvetica, sans-serif;
 }
 
 
@@ -89,14 +84,13 @@ header{
 
 header h1{
     margin: 0;
-    color: transparent;
-    overflow: hidden;
-    text-indent: -9999px;
-    white-space: nowrap;
-    background-image: url("../img/logo-bonsai.webp");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+    line-height: 0;
+}
+
+header h1 img{
+    display: block;
+    width: 150px;
+    height: auto;
 }
 
 #hamburguesa,
@@ -124,13 +118,9 @@ header h1{
         background-color: #ffffff;
     }
 
-    header h1{
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
+    header h1 img{
         width: 150px;
-        height: 42px;
+        height: auto;
     }
 
     header nav{
@@ -213,19 +203,7 @@ header h1{
         text-transform: none;
     }
 
-    #menu:target #hamburguesa li:first-child{
-        display: none;
-    }
-
-    #menu:target #hamburguesa li:last-child{
-        display: block;
-    }
-
-    #menu:target #barra{
-        display: flex;
-    }
-
-    /* estado abierto: ahora depende de #menu */
+    /* Estado abierto: cuando :target cae en #menu */
     #menu:target #hamburguesa li:first-child{
         display: none;
     }
@@ -918,10 +896,10 @@ footer p{
 }
 
 /* =======================================================
-   TABLET
+   TABLET (mobile-first: solo min-width, como vimos en clase)
 ======================================================= */
 
-@media screen and (min-width: 557px) and (max-width: 991px){
+@media screen and (min-width: 557px){
 
     header{
         background-color: #ffffff;
@@ -934,12 +912,12 @@ footer p{
     }
 
     header h1{
-        width: 170px;
-        height: 46px;
-        position: static;
-        transform: none;
-        display: block;
         flex-shrink: 0;
+    }
+
+    header h1 img{
+        width: 170px;
+        height: auto;
     }
 
     header nav{
@@ -1231,12 +1209,12 @@ footer p{
     }
 
     header h1{
-        width: 190px;
-        height: 52px;
-        position: static;
-        transform: none;
-        display: block;
         flex-shrink: 0;
+    }
+
+    header h1 img{
+        width: 190px;
+        height: auto;
     }
 
     header nav{

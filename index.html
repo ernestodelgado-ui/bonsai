@@ -10,6 +10,11 @@
     <!-- Título que aparece en la pestaña -->
     <title>BONSAI</title>
 
+    <!-- Google Fonts: DM Serif Display + Source Sans 3 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <!-- Vincula el archivo CSS principal -->
     <link rel="stylesheet" href="estilo/style.css">
 
@@ -26,7 +31,9 @@
          el target cae en #menu y desde ahí se despliega #barra
     ======================================================== -->
     <header>
-        <h1>BONSAI</h1>
+        <h1 id="logo">
+            <img src="img/logo-bonsai.webp" alt="BONSAI">
+        </h1>
 
         <nav id="menu">
             <ul id="hamburguesa">
@@ -108,7 +115,7 @@
                 <li>
                     <figure class="beneficio-img">
                         <picture>
-                            <source media="(max-width: 556px)" srcset="img/beneficio2-celu..webp">
+                            <source media="(max-width: 556px)" srcset="img/beneficio2-celu.webp">
                             <source media="(max-width: 991px)" srcset="img/beneficio2-tablet.webp">
                             <img src="img/beneficio2-pc.webp" alt="Macetas sustentables">
                         </picture>
@@ -309,9 +316,9 @@
         <section id="historia">
             <figure class="historia-img">
                 <picture>
-                    <source media="(max-width: 556px)" srcset="img/historia-celu.webp.webp">
-                    <source media="(max-width: 991px)" srcset="img/historia-tablet.webp.webp">
-                    <img src="img/historia-pc.webp.webp" alt="Espacio interior con plantas">
+                    <source media="(max-width: 556px)" srcset="img/historia-celu.webp">
+                    <source media="(max-width: 991px)" srcset="img/historia-tablet.webp">
+                    <img src="img/historia-pc.webp" alt="Espacio interior con plantas">
                 </picture>
             </figure>
 
